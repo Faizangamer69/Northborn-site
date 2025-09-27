@@ -1,15 +1,28 @@
-version: "3.8"
-version: "3.9"   # declares the compose file format version
+version: "3.9"
 
 services:
-  db:                        # service 1 = database
-    image: mysql:8.0         # pulls and runs MySQL 8.0
-    environment:             # sets environment variables inside the MySQL container
-      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}  # root password for MySQL
+  db:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    volumes:
+      - db_data:/var/lib/mysql
 
-  wordpress:                 # service 2 = WordPress app
-    image: wordpress:latest  # pulls and runs the latest WordPress container
+  wordpress:
+    image: wordpress:latest
     ports:
-      - "8080:80"            # maps localhost:8080 -> container port 80
-    environment:             # WordPress needs DB connection details
-      WORDPRESS_DB_HOST: db:3306  # tells WP to connect to the "db" service on port 3306
+      - "8080:80"
+    environment:
+      WORDPRESS_DB_HOST: ${WORDPRESS_DB_HOST}
+      WORDPRESS_DB_NAME: ${WORDPRESS_DB_NAME}
+      WORDPRESS_DB_USER: ${WORDPRESS_DB_USER}
+      WORDPRESS_DB_PASSWORD: ${WORDPRESS_DB_PASSWORD}
+    volumes:
+      - wp_data:/var/www/html
+
+volumes:
+  db_data:
+  wp_data:
