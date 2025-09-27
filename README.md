@@ -1,1 +1,1 @@
-# Website for Symphonic Melodeath band Northborn.
+# Symphonic Melodeath band Northborn
