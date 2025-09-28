@@ -33,17 +33,35 @@ services:
   frontend:
     build:
       context: ./frontend
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.dev
     ports:
       - "3000:3000"
     environment:
-      - NODE_ENV=production
+      - NODE_ENV=development
       # Add your WordPress API URL here
       - WORDPRESS_API_URL=http://wordpress:80/wp-json/wp/v2
     depends_on:
       - wordpress
     networks:
       - northborn-network
+    volumes:
+      # Mount node_modules as an anonymous volume for better performance
+      - /app/node_modules
+    command: npm run dev
+    develop:
+      watch:
+        - action: sync
+          path: ./frontend
+          target: /app
+          ignore:
+            - node_modules/
+            - .next/
+            - .git/
+            - Dockerfile
+            - README.md
+        - action: rebuild
+          path: ./frontend/package.json
+
 
   # Database Admin (Optional)
   phpmyadmin:
