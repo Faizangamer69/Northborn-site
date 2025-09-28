@@ -45,8 +45,7 @@ services:
     networks:
       - northborn-network
     volumes:
-      # Mount node_modules as an anonymous volume for better performance
-      - /app/node_modules
+      # (Removed anonymous volume for node_modules; source code is synced via develop.watch)
     develop:
       watch:
         - action: sync
