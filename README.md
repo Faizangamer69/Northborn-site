@@ -45,20 +45,22 @@ This project is a full-stack web application designed for the symphonic melodic 
 │   ├── 📁 src/app/       # App Router structure
 │   ├── 📁 public/        # Static assets
 │   ├── Dockerfile        # Frontend containerization
+│   ├── next.config.ts    # Next.js configuration with standalone output
 │   └── package.json      # Dependencies & scripts
-├── 📁 docker/            # Docker configuration
-│   └── docker-compose.yaml
+├── docker-compose.yaml   # Unified container orchestration
+├── .env                  # Environment variables
+├── .env.example          # Environment template
 └── README.md
 ```
 
 ## 🚀 Quick Start
 
 ### Prerequisites
-- Node.js 20+
 - Docker & Docker Compose
 - Git
+- (Optional) Node.js 20+ for local development
 
-### Installation
+### Docker Deployment (Recommended)
 
 1. **Clone the repository**
    ```bash
@@ -66,21 +68,34 @@ This project is a full-stack web application designed for the symphonic melodic 
    cd Northborn-site
    ```
 
-2. **Install frontend dependencies**
+2. **Set up environment variables**
+   ```bash
+   cp .env.example .env
+   # Edit .env with your database credentials
+   ```
+
+3. **Start the entire stack**
+   ```bash
+   docker-compose up --build
+   ```
+
+4. **Access your applications**
+   - **Frontend**: http://localhost:3000
+   - **WordPress Admin**: http://localhost:8080/wp-admin
+   - **WordPress API**: http://localhost:8080/wp-json/wp/v2
+   - **phpMyAdmin**: http://localhost:8081
+
+### Local Development (Alternative)
+
+1. **Install frontend dependencies**
    ```bash
    cd frontend
    npm install
    ```
 
-3. **Start development server**
+2. **Start development server**
    ```bash
    npm run dev
-   ```
-
-4. **Docker deployment**
-   ```bash
-   cd ../docker
-   docker-compose up -d
    ```
 
 ### Available Scripts
@@ -92,11 +107,27 @@ This project is a full-stack web application designed for the symphonic melodic 
 
 ## 🌐 Deployment
 
-The application is containerized and can be deployed to any Docker-compatible platform:
+### Docker Services
+The application consists of 4 containerized services:
 
-- **Development**: Local Docker Compose setup
+| Service | Port | Description |
+|---------|------|-------------|
+| **Frontend** | 3000 | Next.js application with standalone server |
+| **WordPress** | 8080 | Headless CMS with REST API |
+| **MySQL** | 3306 | Database (internal network only) |
+| **phpMyAdmin** | 8081 | Database administration interface |
+
+### Deployment Options
+- **Local Development**: `docker-compose up --build`
 - **Production**: Cloud platforms (AWS, DigitalOcean, etc.)
 - **CI/CD**: Ready for automated deployment pipelines
+
+### Docker Features
+- ✅ **Multi-stage builds** for optimized production images
+- ✅ **Standalone Next.js output** for minimal container size
+- ✅ **Automatic service dependencies** and health checks
+- ✅ **Persistent data volumes** for database and WordPress files
+- ✅ **Internal networking** for secure service communication
 
 ## 💡 Key Development Highlights
 
