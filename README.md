@@ -1,6 +1,6 @@
 # 🎸 Northborn - Band Website
 
-> A modern, responsive website for the symphonic melodic death metal band Northborn, built with cutting-edge web technologies.
+> A modern, responsive website for the symphonic melodic death metal band Northborn.
 
 [![Next.js](https://img.shields.io/badge/Next.js-15.5.4-black.svg)](https://nextjs.org/)
 [![React](https://img.shields.io/badge/React-19.1.0-blue.svg)](https://reactjs.org/)
@@ -10,7 +10,7 @@
 
 ## 🚀 Overview
 
-This project is a full-stack web application designed for the symphonic melodic death metal band Northborn. It demonstrates modern web development practices, containerization, and deployment strategies suitable for professional music industry websites.
+This project is a full-stack web application designed for the symphonic melodic death metal band Northborn. It demonstrates modern web development practices, containerization, and deployment strategies.
 
 ## 🛠️ Tech Stack
 
@@ -48,8 +48,8 @@ This project is a full-stack web application designed for the symphonic melodic 
 │   ├── next.config.ts    # Next.js configuration with standalone output
 │   └── package.json      # Dependencies & scripts
 ├── docker-compose.yaml   # Unified container orchestration
-├── .env                  # Environment variables
-├── .env.example          # Environment template
+├── .env                  # Environment variables (optional for development)
+├── WATCH_SETUP.md        # Docker watch configuration guide
 └── README.md
 ```
 
@@ -68,15 +68,21 @@ This project is a full-stack web application designed for the symphonic melodic 
    cd Northborn-site
    ```
 
-2. **Set up environment variables**
+2. **Set up environment variables** (Optional)
    ```bash
-   cp .env.example .env
-   # Edit .env with your database credentials
+   # Create .env file if you need custom database credentials
+   # The setup works with default values for development
    ```
 
 3. **Start the entire stack**
    ```bash
-   docker-compose up --build
+   docker compose up -d
+   ```
+
+4. **For development with live reload** (Recommended for active development)
+   ```bash
+   docker compose up -d        # Start services
+   docker compose watch        # Enable file watching & hot reload
    ```
 
 4. **Access your applications**
@@ -85,26 +91,23 @@ This project is a full-stack web application designed for the symphonic melodic 
    - **WordPress API**: http://localhost:8080/wp-json/wp/v2
    - **phpMyAdmin**: http://localhost:8081
 
-### Local Development (Alternative)
-
-1. **Install frontend dependencies**
+5. **Stop services**
    ```bash
-   cd frontend
-   npm install
+   # Stop watch mode (if running): Ctrl+C
+   docker compose down
    ```
 
-2. **Start development server**
-   ```bash
-   npm run dev
-   ```
+### 🔥 Development with Watch Mode
 
-### Available Scripts
+For the best development experience, use Docker Compose watch mode:
 
-- `npm run dev` - Start development server with Turbopack
-- `npm run build` - Build for production
-- `npm run start` - Start production server
-- `npm run lint` - Run ESLint
+```bash
+# Start all services
+docker compose up -d
 
+# Enable file watching (in a separate terminal)
+docker compose watch
+```
 ## 🌐 Deployment
 
 ### Docker Services
@@ -117,63 +120,10 @@ The application consists of 4 containerized services:
 | **MySQL** | 3306 | Database (internal network only) |
 | **phpMyAdmin** | 8081 | Database administration interface |
 
-### Deployment Options
-- **Local Development**: `docker-compose up --build`
-- **Production**: Cloud platforms (AWS, DigitalOcean, etc.)
-- **CI/CD**: Ready for automated deployment pipelines
-
-### Docker Features
-- ✅ **Multi-stage builds** for optimized production images
-- ✅ **Standalone Next.js output** for minimal container size
-- ✅ **Automatic service dependencies** and health checks
-- ✅ **Persistent data volumes** for database and WordPress files
-- ✅ **Internal networking** for secure service communication
-
-## 💡 Key Development Highlights
-
-- **Modern React**: Utilizes React 19's latest features and concurrent rendering
-- **Performance First**: Turbopack integration for faster development builds
-- **Type Safety**: Comprehensive TypeScript implementation
-- **Containerization**: Production-ready Docker setup
-- **Scalable Architecture**: Clean separation of concerns and modular structure
 
 ## 🔧 Environment Configuration
 
-Create environment files for different deployment stages:
-
-```env
-# Database Configuration
-MYSQL_ROOT_PASSWORD=your_password
-MYSQL_DATABASE=northborn_db
-MYSQL_USER=northborn_user
-MYSQL_PASSWORD=user_password
-
-# WordPress Configuration
-WORDPRESS_DB_HOST=db:3306
-WORDPRESS_DB_NAME=northborn_db
-WORDPRESS_DB_USER=northborn_user
-WORDPRESS_DB_PASSWORD=user_password
-```
-
-## 📈 Performance & SEO
-
-- ✅ Server-side rendering with Next.js
-- ✅ Image optimization
-- ✅ Code splitting and lazy loading
-- ✅ SEO-friendly structure
-- ✅ Lighthouse score optimization
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+The application works out of the box for development. For production or custom setups, create a `.env` file.
 
 ## 👨‍💻 Developer
 
