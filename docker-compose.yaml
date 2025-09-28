@@ -47,7 +47,6 @@ services:
     volumes:
       # Mount node_modules as an anonymous volume for better performance
       - /app/node_modules
-    command: npm run dev
     develop:
       watch:
         - action: sync
